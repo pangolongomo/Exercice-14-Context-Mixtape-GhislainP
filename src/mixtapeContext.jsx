@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export const mixtapeContext = React.createContext(null);
 
 export function MixtapeProvider({ children, songs }) {
-  const [genre, setGenre] = useState("tous");
+  const [genre, setGenre] = useState("all");
   const [sortOrder, setSortOrder] = useState("ascending");
 
   return (
