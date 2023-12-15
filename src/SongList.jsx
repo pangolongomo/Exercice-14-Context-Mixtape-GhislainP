@@ -4,7 +4,6 @@ import { Song } from "./Song";
 
 export const SongList = () => {
   const { genre, sortOrder, songs } = useContext(mixtapeContext);
-  console.log(sortOrder);
   return (
     <>
       {songs
