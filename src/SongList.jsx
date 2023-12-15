@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
+import { mixtapeContext } from "./mixtapeContext";
+import { Song } from "./Song";
 
 export const SongList = () => {
-  // Your code here! ✨
+  const { genre, sortOrder, songs } = useContext(mixtapeContext);
   return (
     <>
-      <h2>TODO: Update taste in music...?</h2>
+      {songs.map((song, index) => (
+        <Song
+          key={index}
+          artist={song.artist}
+          genre={song.genre}
+          name={song.name}
+          year={song.year}
+        />
+      ))}
     </>
   );
 };
