@@ -14,7 +14,7 @@ export const SongList = () => {
         .sort((older, newer) => {
           if (sortOrder === "ascending") {
             return older.year - newer.year;
-          } else {
+          } else if (sortOrder === "descending") {
             return newer.year - older.year;
           }
         })
