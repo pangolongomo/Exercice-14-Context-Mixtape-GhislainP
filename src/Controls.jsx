@@ -2,17 +2,20 @@ import React, { useContext } from "react";
 import { mixtapeContext } from "./mixtapeContext";
 
 export const Controls = () => {
-  const { genre, setGenre, sortOrder, setSortOrder } =
+  const { genre, setGenre, sortOrder, setSortOrder, songs } =
     useContext(mixtapeContext);
+
+  const genreList = [...new Set(songs.map((song) => song.genre))];
 
   return (
     <div className="controls">
       <select value={genre} onChange={(e) => setGenre(e.target.value)}>
         <option value="all">All</option>
-        <option value="hip hop">Hip Hop</option>
-        <option value="rap">Rap</option>
-        <option value="rock">Rock</option>
-        <option value="pop">Pop</option>
+        {genreList.map((genr) => (
+          <option key={genr} value={genr}>
+            {genr.charAt(0).toUpperCase() + genr.slice(1)}
+          </option>
+        ))}
       </select>
       <button
         onClick={() =>

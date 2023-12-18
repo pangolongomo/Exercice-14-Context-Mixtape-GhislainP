@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
 import { MixtapeProvider, mixtapeContext } from "./mixtapeContext";
 import { SongList } from "./SongList";
 import { Controls } from "./Controls";
